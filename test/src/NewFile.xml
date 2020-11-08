@@ -29,6 +29,12 @@ c.mod_user_no
 from 
 	contents_groups_map_tb a
 	join contents_info_tb b
+	from 
+	contents_groups_map_tb a
+	join contents_info_tb b
+		on a.contents_id = b.contents_id
+	left outer join contents_atch_file_tb b
+		on	a.contents_id = c.contents_id
 		on a.contents_id = b.contents_id
 	left outer join contents_atch_file_tb b
 		on	a.contents_id = c.contents_id
