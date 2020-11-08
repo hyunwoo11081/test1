@@ -1,0 +1,50 @@
+select
+
+a.CONTENTS_GROUP_ID, 
+a.CONTENTS_ID, 
+a.CON_GROUPS_ID,
+a.reg_dt, 
+a.reg_user_no,
+
+b.CONTENTS_ID,
+b.NAME,
+b.CONTENTS_TYPE,
+b.PLAY_TIME,
+b.CONTENTS_WIDTH,
+b.CONTENTS_HEIGHT,
+b.COMPANY_ID,
+b.use_yn,
+b.reg_dt,
+b.reg_user_no,
+c.CONTENTS_ID,
+c.STORE_PATH,
+c.STORE_FIELNAME,
+c.ORIGIN_FIELNAME,
+c.FILE_EXTEN,
+c.FILE_SIZE,
+c.reg_dt,
+c.reg_user_no,
+c.mod_dt,
+c.mod_user_no
+from 
+	contents_groups_map_tb a
+	join contents_info_tb b
+		on a.contents_id = b.contents_id
+	left outer join contents_atch_file_tb b
+		on	a.contents_id = c.contents_id
+where 1=1
+
+
+
+select 
+b.CONTENTS_ID,
+b.STORE_PATH,
+b.STORE_FIELNAME,
+b.ORIGIN_FIELNAME,
+b.FILE_EXTEN,
+b.FILE_SIZE,
+b.reg_dt,
+b.reg_user_no,
+b.mod_dt,
+b.mod_user_no
+from contents_atch_file_tb;
