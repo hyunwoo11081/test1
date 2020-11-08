@@ -7,7 +7,7 @@ a.reg_dt,
 a.reg_user_no,
 
 b.CONTENTS_ID,
-b.NAME,
+b.NAME123,
 b.CONTENTS_TYPE,
 b.PLAY_TIME,
 b.CONTENTS_WIDTH,
